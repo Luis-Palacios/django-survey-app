@@ -6,7 +6,7 @@ from material.sites import site
 from .models import Question, Choice
 
 
-class ChoiceInline(admin.TabularInline):
+class ChoiceInline(admin.StackedInline):
     model = Choice
     extra = 2
     fields = ['choice_text', 'votes']
