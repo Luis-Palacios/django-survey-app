@@ -13,11 +13,13 @@ def add_initial_questions(apps, schema_editor):
         ["C#", "Python", "Java", "PHP", "Javascript", "Go"],
     )
     add_question(Question, "Tabs or Spaces", ["Tabs", "Spaces", "Seriously?"])
-    add_question(Question, "What is your favorite OS", ["Linux", "Windows", "macOS"])
+    add_question(Question, "What is your favorite OS",
+                 ["Linux", "Windows", "macOS"])
 
 
 def add_question(question_model, question_text, choices):
-    question = question_model(question_text=question_text, pub_date=timezone.now())
+    question = question_model(question_text=question_text,
+                              pub_date=timezone.now())
     question.save()
     for choice in choices:
         question.choices.create(choice_text=choice)
