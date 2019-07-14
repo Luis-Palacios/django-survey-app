@@ -2,5 +2,5 @@
     "python.pythonPath": "C:\\Users\\LuisPalacios\\Anaconda3\\envs\\surveyenv\\python.exe",
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "yapf"
 }

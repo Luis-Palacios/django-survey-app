@@ -1,6 +1,5 @@
 from django.db import models
 from django.db.models import Sum
-
 """
     Shamefully copying and pasting from the django intro tutorial 🤣
     and pridefully extending from there
@@ -16,6 +15,7 @@ class Question(models.Model):
 
     def choices_count(self):
         return self.choices.count()
+
     choices_count.short_description = 'Number of choices'
 
     def total_votes(self):
@@ -26,9 +26,9 @@ class Question(models.Model):
 
 
 class Choice(models.Model):
-    question = models.ForeignKey(
-        Question, on_delete=models.CASCADE, related_name='choices'
-    )
+    question = models.ForeignKey(Question,
+                                 on_delete=models.CASCADE,
+                                 related_name='choices')
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
 
