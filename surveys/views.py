@@ -3,5 +3,5 @@ from .models import Question
 
 
 def index(request):
-    question = Question.objects.all()[0]
+    question = Question.objects.order_by('?').first()
     return render(request, 'surveys/index.html', {'question': question})
