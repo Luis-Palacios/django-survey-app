@@ -1,3 +1,13 @@
-<p>
-    Hello from the survey index
-</p>
+<form>
+  <h1>
+    {{ question.question_text }}
+  </h1>
+  <ul>
+    {% for choice in question.choices.all %}
+    <li>
+      <input type="radio" name="choice" value="choice.id" id="{{ choice.id }}">
+      <label for="{{ choice.id }}">{{ choice.choice_text }}</label>
+    </li>
+    {% endfor %}
+  </ul>
+</form>

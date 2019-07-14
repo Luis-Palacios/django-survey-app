@@ -9,11 +9,11 @@ def add_initial_questions(apps, schema_editor):
     add_question(Question, "How cool is this app?", ["👌", "👏", "👍", "👎", "💩"])
     add_question(
         Question,
-        "What is your favorite programming language",
+        "What is your favorite programming language?",
         ["C#", "Python", "Java", "PHP", "Javascript", "Go"],
     )
-    add_question(Question, "Tabs or Spaces", ["Tabs", "Spaces", "Seriously?"])
-    add_question(Question, "What is your favorite OS",
+    add_question(Question, "Tabs or Spaces?", ["Tabs", "Spaces", "Seriously?"])
+    add_question(Question, "What is your favorite OS?",
                  ["Linux", "Windows", "macOS"])
 
 
