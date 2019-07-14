@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "surveys.apps.SurveysConfig",
+    "material",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
