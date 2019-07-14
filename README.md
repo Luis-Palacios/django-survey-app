@@ -20,4 +20,6 @@ This django web application allows an admin user to create survey questions with
 
 ## Running the project
 
-1. TODO
+1. Run migrations
+2. Create super user
+3. TODO: Detail the commands
