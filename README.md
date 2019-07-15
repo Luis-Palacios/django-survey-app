@@ -36,7 +36,7 @@ Note: You must run the following commands from the root of your project
 1. Create your `local_settings.py` file from template
 
     ```bash
-    cp django_survey_app\local_settings.py.template django_survey_app\local_settings.py
+    cp django_survey_app/local_settings.py.template django_survey_app/local_settings.py
     ```
 
 2. Open `local_settings.py` and uncomment the database block corresponding to the database server you will use
