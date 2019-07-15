@@ -22,6 +22,3 @@ typed-ast==1.4.0
 wincertstore==0.2
 wrapt==1.11.2
 yapf==0.28.0
-mysql-connector-python==8.0.16
-protobuf==3.9.0
-six==1.12.0
