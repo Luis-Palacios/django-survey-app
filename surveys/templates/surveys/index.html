@@ -1,4 +1,31 @@
-<form>
+{% extends 'surveys/base.html' %}
+{% block content %}
+<div class="mdl-grid portfolio-max-width">
+  <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__title mdl-card--border">
+      <h2 class="mdl-card__title-text">{{question.question_text}}</h2>
+    </div>
+    <div class="mdl-card__supporting-text no-vertical-padding">
+      <ul class="choice-list-control mdl-list">
+        {% for choice in question.choices.all %}
+        <li class="mdl-list__item">
+          <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="{{ choice.id }}">
+            <input type="radio" id="{{ choice.id }}" class="mdl-radio__button" name="options" value="{{ choice.id }}">
+            <span class="mdl-radio__label">{{ choice.choice_text }}</span>
+          </label>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="mdl-card__actions mdl-card--border">
+     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
+      Submit
+    </button>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+{% comment %} <form>
   <h1>
     {{ question.question_text }}
   </h1>
@@ -10,4 +37,4 @@
     </li>
     {% endfor %}
   </ul>
-</form>
+</form> {% endcomment %}
