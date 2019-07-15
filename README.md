@@ -7,7 +7,7 @@ if he wants to
 
 1. [python 3.5.x](https://www.python.org/) or higher with [pip](https://pypi.org/project/pip/)
 2. Whatever you prefer to manage your python dependencies [VirtualEnv](https://docs.python.org/3/tutorial/venv.html), [Pipenv](https://docs.pipenv.org/en/latest/), [Conda](https://docs.conda.io/en/latest/) or anything that alllows you to use `pip install`
-3. **Optional** if you want to use MySQL over sqlite3 you will need to install [MySQL 5.6 or higer](https://dev.mysql.com/downloads/mysql/) and it's required drivers according to your OS
+3. **Optional** if you want to use MySQL over sqlite3 you will need to install [MySQL 5.6 or higer](https://dev.mysql.com/downloads/mysql/)  Check this [stackoverflow question](https://stackoverflow.com/a/35191977) if you run into trouble while installing mysqlclient if you have already installed mySQL you shoulnd't run into trouble
 
 ## Setup
 
@@ -25,8 +25,16 @@ if he wants to
 
 3. With your virtual environment active navigate to the root of the project where the `manage.py` and `requirements.txt` files are located and execute:
 
+    - For sqllite3
+    
     ```bash
     pip install -r requirements.txt
+    ```
+
+    - For mySQL
+    
+    ```sh
+    pip install -r requiriments.mysql.txt
     ```
 
 ## Add local configuration
@@ -36,7 +44,7 @@ Note: You must run the following commands from the root of your project
 1. Create your `local_settings.py` file from template
 
     ```bash
-    cp django_survey_app\local_settings.py.template django_survey_app\local_settings.py
+    cp django_survey_app/local_settings.py.template django_survey_app/local_settings.py
     ```
 
 2. Open `local_settings.py` and uncomment the database block corresponding to the database server you will use
