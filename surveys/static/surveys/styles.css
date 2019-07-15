@@ -1,6 +1,6 @@
 .portfolio-header {
   position: relative;
-  background-image: url(images/header-bg.png);
+  background-color: transparent;
 }
 
 .portfolio-header .mdl-layout__header-row {

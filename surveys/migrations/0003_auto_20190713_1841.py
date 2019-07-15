@@ -12,9 +12,12 @@ def add_initial_questions(apps, schema_editor):
         "What is your favorite programming language?",
         ["C#", "Python", "Java", "PHP", "Javascript", "Go"],
     )
-    add_question(Question, "Tabs or Spaces?", ["Tabs", "Spaces", "Seriously?"])
+    add_question(Question, "What is love?",
+                 ["Baby", "Don't hurt me", "...Don't hurt me", "No more"])
     add_question(Question, "What is your favorite OS?",
                  ["Linux", "Windows", "macOS"])
+    add_question(Question, "Should you be dancing?",
+                 ["Yeeeeah!", "Dancing", "What you doin' on your back", "aah"])
 
 
 def add_question(question_model, question_text, choices):
