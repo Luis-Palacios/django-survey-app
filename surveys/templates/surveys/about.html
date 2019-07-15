@@ -1,0 +1,36 @@
+{% extends 'surveys/base.html' %}
+{% load static %}
+{% block content %}
+<div class="mdl-grid portfolio-max-width">
+  <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp">
+    <div class="mdl-card__title">
+      <h2 class="mdl-card__title-text">About Me</h2>
+    </div>
+    <div class="mdl-card__media">
+      <img class="article-image" src="{% static 'surveys/images/about-header.png' %}" border="0" alt="">
+    </div>
+
+    <div class="mdl-grid portfolio-copy">
+      <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Introduction</h3>
+      <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding ">
+        <p>
+          Hello, I'm Luis Palacios. I'm a Full Stack Developer that loves finding solutions for problems through software.
+          I'm passionate about code, not just writing code that works but also code that is nice to behold and maintain.
+          I'm committed to this because I've had already written a lot of ugly code on the past that became a nightmare to maintain,
+          that is why the best coding practices are a priority for me now! I want to continue learning, sharing and teaching everything
+          about software development.
+        </p>
+      </div>
+
+      <h3 class="mdl-cell mdl-cell--12-col mdl-typography--headline">Random facts</h3>
+      <div class="mdl-cell mdl-cell--8-col mdl-card__supporting-text no-padding ">
+        <h4>Dream bike</h4>
+          <img class="article-image" src="https://www.motofichas.com/images/phocagallery/Yamaha_Motor_Corporation/yzf-r3-2019/04-yamaha-yzf-r3-2019-perfil-negro.jpg">
+        <h4>The end</h4>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+{% endblock content %}
