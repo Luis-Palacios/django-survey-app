@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Count
 from django.utils.timezone import now
 
 from .constants import REQUIRED_CHOICES
@@ -30,10 +31,9 @@ class Question(models.Model):
     has_enough_choices.boolean = True
 
     def total_votes(self):
-        # TODO: Refactor
-        # aggregate_dict = self.choices.aggregate(aggregate_dict=Sum('votes'))
-        # if aggregate_dict:
-        #     return aggregate_dict.get('total_votes', 0)
+        aggregate_dict = self.choices.aggregate(total_answers=Count('answers'))
+        if aggregate_dict:
+            return aggregate_dict.get('total_answers', 0)
         return 0
 
 
