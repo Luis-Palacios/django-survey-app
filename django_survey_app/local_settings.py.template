@@ -23,7 +23,8 @@ SECRET_KEY = '65y!t!=p%8wa674m-34p1v#!t!@45i!k85c1zz+w%+hv3jco)j'
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
 #         'OPTIONS': {
-#             'read_default_file': os.path.join(BASE_DIR, 'my.cnf')
+#             'read_default_file': os.path.join(BASE_DIR, 'my.cnf'),
+#             'charset': 'utf8mb4'
 #         },
 #     }
 # }

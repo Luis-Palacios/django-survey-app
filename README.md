@@ -49,7 +49,6 @@ Note: You must run the following commands from the root of your project
 
     Open the `my.cnf` and add your database connection string data
 
-
     **Important**: Remember to manually create the Database on mySQL Server
 
 ## Running the project
@@ -61,6 +60,8 @@ Note: For the following commands you must have already configured your database 
     ```sh
     python manage.py migrate
     ```
+
+    **Note** If using mySQL you run into `Incorrect string value` make sure you set charset of your mySQL db to `utf8mb4` it should be the default for newer version
 
 2. Create super user
 
