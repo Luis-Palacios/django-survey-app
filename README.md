@@ -26,15 +26,15 @@ if he wants to
 3. With your virtual environment active navigate to the root of the project where the `manage.py` and `requirements.txt` files are located and execute:
 
     - For sqllite3
-    
+
     ```bash
     pip install -r requirements.txt
     ```
 
     - For mySQL
-    
+
     ```sh
-    pip install -r requiriments.mysql.txt
+   pip install -r requirements.mysql.txt
     ```
 
 ## Add local configuration
