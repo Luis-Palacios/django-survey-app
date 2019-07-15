@@ -4,6 +4,7 @@ from material.decorators import register
 from material.options import MaterialModelAdmin
 from material.sites import site
 
+from .constants import REQUIRED_CHOICES
 from .models import Choice, Question
 
 
@@ -25,7 +26,7 @@ class EnoughChoicesFilter(admin.SimpleListFilter):
 class ChoiceInline(admin.TabularInline):
     model = Choice
     extra = 0
-    min_num = 2
+    min_num = REQUIRED_CHOICES
     fields = ['choice_text', 'votes']
     readonly_fields = ['votes']
 

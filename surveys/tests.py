@@ -1,7 +1,8 @@
-from django.test import TestCase
 from django.shortcuts import reverse
+from django.test import TestCase
 from django.utils import timezone
 
+from .constants import REQUIRED_CHOICES
 from .models import Question
 
 
@@ -65,7 +66,7 @@ class QuestionViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIsNotNone(response.context['question'])
         self.assertGreaterEqual(response.context['question'].choices.count(),
-                                2)
+                                REQUIRED_CHOICES)
 
     def test_all_questions_answered_get_no_question(self):
         session = self.client.session
@@ -73,7 +74,7 @@ class QuestionViewTests(TestCase):
 
         questions = Question.objects.get_valid_questions()
         for question in questions:
-            if question.choices.count() >= 2:
+            if question.choices.count() >= REQUIRED_CHOICES:
                 question.choices.first().answers.create(
                     session_key=session.session_key)
 
@@ -87,7 +88,7 @@ class QuestionViewTests(TestCase):
 
         questions = Question.objects.get_valid_questions().order_by('-id')
         for question in questions[0:questions.count() - 1]:
-            if question.choices.count() >= 2:
+            if question.choices.count() >= REQUIRED_CHOICES:
                 question.choices.first().answers.create(
                     session_key=session.session_key)
 
@@ -95,7 +96,7 @@ class QuestionViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIsNotNone(response.context['question'])
         self.assertGreaterEqual(response.context['question'].choices.count(),
-                                2)
+                                REQUIRED_CHOICES)
 
     def test_post_question_no_choice_selected(self):
         response = self.client.post(reverse('index'), {

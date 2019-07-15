@@ -1,7 +1,10 @@
 from django.db import models
 from django.utils.timezone import now
 
+from .constants import REQUIRED_CHOICES
 from .managers import QuestionQuerySet
+
+
 """
     Shamefully copying and pasting from the django intro tutorial 🤣
     and pridefully extending from there 😎
@@ -22,7 +25,7 @@ class Question(models.Model):
     choices_count.short_description = 'Number of choices'
 
     def has_enough_choices(self):
-        return self.choices.count() >= 2
+        return self.choices.count() >= REQUIRED_CHOICES
 
     has_enough_choices.boolean = True
 
